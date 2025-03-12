@@ -2,6 +2,11 @@
 
 An interactive data analytics and visualization application that leverages OpenAI's GPT-4o-Mini to provide intelligent dataset analysis, insights generation, and advanced visualizations.
 
+![Dataset Chat Assistant](https://img.shields.io/badge/Dataset_Chat-Assistant-blue)
+![Python](https://img.shields.io/badge/Python-3.8+-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.32.0-red)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o--mini-green)
+
 ## Features
 
 ### Advanced Analytics
@@ -22,46 +27,123 @@ An interactive data analytics and visualization application that leverages OpenA
 - **Intelligent Insights**: Receive auto-generated insights based on dataset content
 - **Context-Sensitive Responses**: Get relevant answers based on the uploaded dataset
 
-## Setup
+## Repository Structure
 
-1. Install dependencies:
-```bash
-pip install -r requirements.txt
+```
+dataset-chat-assistant/
+├── app.py                     # Main application file with Streamlit UI
+├── advanced_analytics.py      # Advanced analytics module (outlier detection, clustering, etc.)
+├── enhanced_visualizations.py # Enhanced visualization module (heatmaps, dashboards, etc.)
+├── ANALYTICAL_REPORT.md       # Comparative analysis with similar technologies
+├── .env                       # Environment variables (not in repo)
+├── .env.example               # Example environment variables template
+├── requirements.txt           # Project dependencies
+└── README.md                  # This documentation
 ```
 
-2. Configure environment variables:
-   - Copy `.env.example` to `.env`
-   - Add your OpenAI API key to the `.env` file:
+### Key Files Description
+
+- **app.py**: Contains the main `DatasetChat` class and Streamlit interface code. This file handles UI components, user interactions, and integrates the analytics and visualization modules.
+
+- **advanced_analytics.py**: Implements the `AdvancedAnalytics` class with methods for:
+  - `detect_outliers()`: Uses Isolation Forest to find anomalies in data
+  - `generate_correlation_analysis()`: Calculates correlations between numeric columns
+  - `perform_clustering()`: Applies K-means clustering to find patterns
+  - `analyze_time_series()`: Detects trends in time-series data
+  - `get_descriptive_statistics()`: Calculates key statistical measures
+
+- **enhanced_visualizations.py**: Implements the `EnhancedVisualizations` class with methods for:
+  - `create_correlation_heatmap()`: Generates interactive correlation matrices
+  - `create_outlier_visualization()`: Visualizes detected outliers
+  - `create_distribution_plot()`: Shows distributions with kernel density estimation
+  - `create_time_series_plot()`: Generates time series with trend lines
+  - `create_multi_chart_dashboard()`: Creates a comprehensive dashboard
+  - `suggest_visualizations()`: Recommends appropriate charts based on data
+
+## Setup Instructions
+
+### Prerequisites
+- Python 3.8 or higher
+- Git (for cloning the repository)
+- OpenAI API key
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/abdul-28930/InternAntei.git
+   cd InternAntei
    ```
-   OPENAI_API_KEY=your_api_key_here
+
+2. **Create and activate a virtual environment** (optional but recommended):
+   ```bash
+   # On Windows
+   python -m venv .anteiintern
+   .anteiintern\Scripts\activate
+
+   # On macOS/Linux
+   python -m venv .anteiintern
+   source .anteiintern/bin/activate
    ```
+
+3. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Set up environment variables**:
+   - Copy the example environment file:
+     ```bash
+     cp .env.example .env
+     ```
+   - Edit the `.env` file and add your OpenAI API key:
+     ```
+     OPENAI_API_KEY=your_api_key_here
+     DEFAULT_MODEL=gpt-4o-mini
+     ```
 
 ## Running the Application
 
-```bash
-streamlit run app.py
-```
+1. **Start the Streamlit server**:
+   ```bash
+   streamlit run app.py
+   ```
 
-The application will be available at `http://localhost:8501`
+2. **Access the application**:
+   Open your browser and navigate to `http://localhost:8501`
 
 ## How to Use
 
-1. **Upload Your Dataset**: Support for CSV and Excel files
-2. **Explore Data**: View your data in the preview tab
-3. **Get Insights**: Check the Insights tab for automatic analysis of your data
-4. **Create Visualizations**: Generate advanced visualizations in the Visualizations tab
-5. **Chat with Your Data**: Ask questions in natural language about your dataset
+1. **Upload Your Dataset**:
+   - Click the "📂 Upload Dataset" button in the sidebar
+   - Select a CSV or Excel file from your computer
 
-## Technology Stack
+2. **Explore the Dataset**:
+   - The "📊 Data Preview" tab shows the first few rows of your data
+   - The "🔍 Insights" tab provides automatic analysis of key metrics
 
-- **OpenAI GPT-4o-Mini**: For natural language understanding and dataset insights
-- **Streamlit**: For the interactive web interface
-- **Plotly**: For interactive data visualizations
-- **Pandas**: For data manipulation and analysis
-- **Scikit-learn**: For advanced analytics (outlier detection, clustering)
+3. **Generate Visualizations**:
+   - Navigate to the "📈 Advanced Visualizations" tab
+   - Select from correlation analysis, outlier detection, time series analysis, etc.
+   - Click the generate button to create interactive visualizations
 
-## Requirements
+4. **Chat with Your Data**:
+   - Type questions about your dataset in the chat box
+   - Get AI-powered responses based on the actual content of your data
 
-- Python 3.8 or higher
-- Internet connection for OpenAI API access
-- OpenAI API key
+## Examples
+
+### Example Questions
+
+- "What are the top-selling games in this dataset?"
+- "Show me the correlation between sales and critic scores"
+- "Which platforms have the highest average sales?"
+- "Is there a trend in game sales over time?"
+- "Identify outliers in the global sales column"
+
+## Troubleshooting
+
+- **API Key Issues**: If you see authentication errors, verify your OpenAI API key in the `.env` file
+- **File Upload Errors**: Make sure your CSV or Excel file is properly formatted
+- **Memory Errors**: For large datasets, try reducing the size or using a subset of the data
+- **Visualization Errors**: Ensure you have selected appropriate columns for each visualization type
