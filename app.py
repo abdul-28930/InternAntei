@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configure OpenAI
-client = AsyncOpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 class DatasetChat:
     def __init__(self):
