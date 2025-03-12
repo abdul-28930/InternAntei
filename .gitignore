@@ -40,7 +40,6 @@ anteiintern/
 .streamlit/
 
 # Data files
-*.csv
 *.xlsx
 *.xls
 *.db
