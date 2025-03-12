@@ -8,6 +8,7 @@ from openai import OpenAI
 from typing import List, Dict
 from advanced_analytics import AdvancedAnalytics
 from enhanced_visualizations import EnhancedVisualizations
+from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
