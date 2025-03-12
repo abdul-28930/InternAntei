@@ -34,6 +34,9 @@ dataset-chat-assistant/
 ├── app.py                     # Main application file with Streamlit UI
 ├── advanced_analytics.py      # Advanced analytics module (outlier detection, clustering, etc.)
 ├── enhanced_visualizations.py # Enhanced visualization module (heatmaps, dashboards, etc.)
+├── index.html                 # Landing page for the web application
+├── index.css                  # Styling for the landing page
+├── index.js                   # JavaScript functionality for the landing page
 ├── ANALYTICAL_REPORT.md       # Comparative analysis with similar technologies
 ├── .env                       # Environment variables (not in repo)
 ├── .env.example               # Example environment variables template
@@ -59,6 +62,27 @@ dataset-chat-assistant/
   - `create_time_series_plot()`: Generates time series with trend lines
   - `create_multi_chart_dashboard()`: Creates a comprehensive dashboard
   - `suggest_visualizations()`: Recommends appropriate charts based on data
+
+### Frontend Files
+
+- **index.html**: The landing page of the application that introduces users to the Dataset Chat Assistant. It includes:
+  - Navigation menu with links to different sections
+  - Hero section with call-to-action buttons
+  - Features overview with illustrations
+  - Testimonials and pricing information
+  - Footer with contact information
+
+- **index.css**: Contains all the styling for the landing page, including:
+  - Responsive layout design
+  - Color schemes and typography
+  - Animations and transitions
+  - Component styling (buttons, cards, navigation)
+
+- **index.js**: Provides interactive functionality for the landing page:
+  - Smooth scrolling for navigation links
+  - Feature showcase animations
+  - Testimonial carousel
+  - Form validation for contact forms
 
 ## Setup Instructions
 
@@ -104,6 +128,8 @@ dataset-chat-assistant/
 
 ## Running the Application
 
+### Running the Streamlit Application
+
 1. **Start the Streamlit server**:
    ```bash
    streamlit run app.py
@@ -111,6 +137,16 @@ dataset-chat-assistant/
 
 2. **Access the application**:
    Open your browser and navigate to `http://localhost:8501`
+
+### Running the Landing Page
+
+To view the landing page (index.html), you can use Python's built-in HTTP server:
+
+```bash
+python -m http.server
+```
+
+This will start a web server on port 8000. Open your browser and navigate to `http://localhost:8000` to view the landing page.
 
 ## How to Use
 
