@@ -5,9 +5,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import streamlit as st
 
-class EnhancedVisualizations:
-    """Enhanced visualization module for creating interactive data visualizations"""
-    
+class EnhancedVisualizations:    
     @staticmethod
     def create_correlation_heatmap(corr_matrix):
         """Create an enhanced correlation heatmap with annotations
